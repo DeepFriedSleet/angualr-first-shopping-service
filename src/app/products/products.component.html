@@ -13,14 +13,14 @@
 <div class="container-fluid">
   <div class="row">
     <!-- ❷  PRODUCT LIST  -->
-    <section class="col-12 col-md-8">
+    <section class="col-12 col-md-8" style="padding-left: 100px;">
       <app-productslist [products]="products
         .filter(filter)
         .sort(sorter)
         .filter(searchFn(search))"></app-productslist>
     </section>
 
-    <aside class="col-12 col-md-4 mb-4 pt-4">
+    <aside class="col-12 col-md-4 mb-4 pt-4" style="padding-right: 100px;">
       <app-cartsummary></app-cartsummary>
     </aside>
   </div>
