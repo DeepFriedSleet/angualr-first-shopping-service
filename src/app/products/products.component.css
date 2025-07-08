@@ -6,9 +6,39 @@
 }
 
 .filter-column {
-  background: #dee2e6;   /* Gray-300 */
+  background: #dee2e6;
 }
 
 .extra-space {
   padding-left: 2rem;
+}
+
+.site-toolbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #dee2e6;
+  color: black;
+  z-index: 1000;
+}
+
+.filter-search-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.filter-search-row app-product-filter {
+  flex: 0 0 auto;
+}
+
+.filter-search-row .search-group {
+  flex: 1 1 auto;
+  min-width: 0;
 }

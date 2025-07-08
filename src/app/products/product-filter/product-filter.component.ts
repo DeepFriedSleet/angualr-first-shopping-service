@@ -56,7 +56,6 @@ export class ProductFilterComponent {
 
   emitSorter(sorter: any) {
     this.sorterChange.emit(sorter);
-    this.emitSorter(this.sorter);
   }
 
   updateFilter(index: number) {
