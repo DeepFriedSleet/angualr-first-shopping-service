@@ -1,0 +1,30 @@
+.empty {
+    padding-block: 3rem;
+}
+
+.list-group {
+    width: fit-content;
+    max-width: 100%;
+}
+
+.cart-list {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-bottom: 1px solid lightgrey;
+}
+
+.small-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.extra-space {
+    padding-left: 3rem;
+}
+
+.extra-space-right {
+    padding-right: 3rem;
+}

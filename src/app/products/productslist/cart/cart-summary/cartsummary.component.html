@@ -1,0 +1,43 @@
+<div class="col-12 col-md-12 flex-column sidebar-sticky h-100" style="top: 8rem;">
+  <div class="col-12 col-md-12">
+    <div class="sidebar-sticky" style="top: 8rem; z-index: 998;">
+
+      <div class="card mb-3">
+        <div class="card-header fw-bold">Cart</div>
+
+        <div class="overflow-auto" style="max-height: calc(100vh - 8rem - 5rem);">
+          <ul class="list-group list-group-flush" *ngIf="cartItems.length; else empty">
+            <li *ngFor="let item of cartItems"
+              class="list-group-item d-flex justify-content-between align-items-center">
+              {{ item.product.name }}
+              <span class="d-flex align-items-center">
+                <span class="badge bg-secondary me-2">{{ item.quantity }}</span>
+                <button class="btn-close" (click)="removeCartItem(item)"></button>
+              </span>
+            </li>
+            <li class="list-group-item text-center">
+              <button class="btn btn-sm btn-outline-danger" (click)="clearCart()">
+                Clear
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <ng-template #empty>
+          <div class="card-body text-center text-muted small">
+            Cart is empty
+          </div>
+        </ng-template>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-primary" (click)="goTo('/cart')">
+          Go To Cart
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

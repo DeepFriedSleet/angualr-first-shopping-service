@@ -1,0 +1,14 @@
+.sidebar-sticky {
+  position: sticky;
+  top: calc(4rem + 0.5rem);
+  height: fit-content;
+  z-index: 998;
+}
+
+.filter-column {
+  background: #dee2e6;   /* Gray-300 */
+}
+
+.extra-space {
+  padding-left: 2rem;
+}

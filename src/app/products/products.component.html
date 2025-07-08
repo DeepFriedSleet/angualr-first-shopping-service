@@ -1,0 +1,26 @@
+<div class="container">
+  <!--Search Bar-->
+  <div class="input-group mb-4">
+    <input type="search" class="form-control" placeholder="Search products…" [(ngModel)]="search" />
+  </div>
+
+  <div class="row">
+
+    <!-- ❶  FILTER SIDEBAR  -->
+    <aside class="col-12 col-md-3 mb-4 sidebar-sticky min-vh-100 filter-column">
+      <app-product-filter [(filter)]="filter" [(sorter)]="sorter" [search]="search"></app-product-filter>
+    </aside>
+
+    <!-- ❷  PRODUCT LIST  -->
+    <section class="col-12 col-md-6">
+      <app-productslist [products]="products
+        .filter(filter)
+        .sort(sorter)
+        .filter(searchFn(search))"></app-productslist>
+    </section>
+
+    <aside class="col-12 col-md-3 mb-4 pt-4">
+      <app-cartsummary></app-cartsummary>
+    </aside>
+  </div>
+</div>

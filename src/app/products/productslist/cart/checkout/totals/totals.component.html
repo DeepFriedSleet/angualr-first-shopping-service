@@ -1,0 +1,40 @@
+<!-- Order-summary card -->
+<div class="card shadow-sm mx-auto mb-3" style="max-width: 420px;">
+    <div class="card-body">
+
+        <!-- Heading with your order-summary styles -->
+        <h5 class="card-title fw-semibold mb-4 text-center order-summary border-bottom py-2">
+            Totals
+        </h5>
+
+        <!-- Totals list -->
+        <ul class="list-unstyled mb-4">
+            <li class="d-flex justify-content-between border-bottom py-2">
+                <span>Products</span>
+                <span>({{ getNumberOfProducts() }})</span>
+            </li>
+            <li class="d-flex justify-content-between border-bottom py-2">
+                <span>Delivery</span>
+                <span class="text-success">Free</span>
+            </li>
+            <li class="d-flex justify-content-between border-bottom py-2">
+                <span>Tax</span>
+                <span class="text-muted">
+                    ${{ getTax() | number:'1.2-2'}}
+                </span>
+            </li>
+            <li class="d-flex justify-content-between border-bottom py-2">
+                <span>Subtotal</span>
+                <span class="text-muted">
+                    ${{ getSubtotal() | number:'1.2-2' }}
+                </span>
+            </li>
+            <li class="d-flex justify-content-between border-bottom py-2">
+                <span>Total</span>
+                <span class="text-muted">
+                    ${{ getSum() | number:'1.2-2' }}
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>

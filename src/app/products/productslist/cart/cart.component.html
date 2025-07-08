@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-12 cart-header py-4">
+      <h3 class="m-0 py-2 text-center">My Cart</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-7">
+      <app-cart-list [cartItems]="cartItems"></app-cart-list>
+    </div>
+
+    <div class="col-12 col-md-5">
+      <div id="main-pane" class="bg-light py-4 px-3 sidebar-sticky">
+
+        <app-order-summary [sum]="sum" [cartItems]="cartItems" [promo]="promo" [nonDiscountSum]="nonDiscountSum"
+          (promoChange)="promoChange($event)">
+        </app-order-summary>
+
+        <div class="d-flex justify-content-between mx-auto" style="max-width: 420px;">
+          <button type="button" class="btn btn-outline-secondary" (click)="goTo('')">
+            Back to Shopping
+          </button>
+
+          <button type="button" class="btn btn-primary" (click)="goTo('/check-out')">
+            Check Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

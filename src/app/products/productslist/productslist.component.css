@@ -1,0 +1,15 @@
+.product-card {
+  padding: 1.5rem 0;
+}
+
+.product-thumb {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  border: 2px solid #dee2e6;
+}
+
+nav.toolbar {
+  height: 32rem;
+}

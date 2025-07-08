@@ -1,0 +1,38 @@
+.cart-header {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.list-group {
+  width: fit-content;
+  max-width: 100%;
+}
+
+#main-pane {
+  min-height: 100vh;
+}
+
+#main-pane ul li {
+  padding-block: 1rem;
+  border-bottom: 1px solid #000;
+}
+
+.order-summary {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #000;
+}
+
+.sidebar-sticky {
+  position: sticky;
+  top: calc(4rem + 0.5rem);
+  height: fit-content;
+  z-index: 998;
+}
+
+.extra-space {
+  padding-left: 3rem;
+}
+
+.extra-space-right {
+  padding-right: 3rem;
+}

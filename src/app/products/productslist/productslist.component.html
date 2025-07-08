@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-12 col-md-6 mb-4 py-4" *ngFor="let product of products">
+    <!-- thumbnail -->
+    <img [src]="product.imageUrl" [alt]="product.name" class="product-thumb d-block mb-3 rounded border border-2"
+      loading="eager" />
+
+    <!-- row: name + button snug together -->
+    <div class="d-flex align-items-center gap-2">
+      <h4 class="mb-0">
+        {{ product.name }}
+      </h4>
+      <app-add-to-cart [product]="product"></app-add-to-cart>
+    </div>
+
+    <!-- small muted price below -->
+    <small class="text-muted">
+      ${{ product.price | number:'1.0-2' }}
+    </small>
+  </div>
+
+
+</div>

@@ -1,0 +1,48 @@
+<!-- Order-summary card -->
+<div class="card shadow-sm mx-auto mb-3" style="max-width: 420px;">
+    <div class="card-body">
+        <!-- Heading with your order-summary styles -->
+        <h5 class="card-title fw-semibold mb-4 text-center order-summary">
+            Order Summary
+        </h5>
+        <!-- Totals list -->
+        <ul class="list-unstyled mb-4">
+            <li class="d-flex justify-content-between border-bottom py-2">
+                <span>Products</span>
+                <span>({{ getNumberOfProducts() }})</span>
+            </li>
+            <li class="d-flex justify-content-between border-bottom py-2">
+                <span>Delivery</span>
+                <span class="text-success">Free</span>
+            </li>
+            <li class="d-flex justify-content-between border-bottom py-2">
+                <span>Discount</span>
+                <span class="text-muted">
+                    ${{ getPromoValue() | number:'1.2-2' }}
+                </span>
+            </li>
+            <li class="d-flex justify-content-between border-bottom py-2">
+                <span>Total</span>
+                <span class="text-muted">
+                    ${{ getTotal() | number:'1.2-2' }}
+                </span>
+            </li>
+        </ul>
+
+        <!-- Promo-code input (keeping your existing styling) -->
+        <div class="input-group mb-2" [formGroup]="validPromoGroup">
+            <input class="form-control" placeholder="Promo code" formControlName="discount" />
+            <button class="btn btn-primary" (click)="applyPromo()"
+                [disabled]="validPromoGroup.get('discount')?.invalid">
+                Apply
+            </button>
+        </div>
+        <small class="text-danger" *ngIf="
+            validPromoGroup.get('discount')?.invalid &&
+            validPromoGroup.get('discount')?.value
+          ">
+            Invalid Promo Code.
+        </small>
+
+    </div>
+</div>

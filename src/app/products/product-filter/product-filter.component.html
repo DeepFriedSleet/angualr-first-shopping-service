@@ -1,0 +1,39 @@
+
+      <h5 class="mb-3 pt-4">Filters</h5>
+      <div class="mb-2">
+        <label class="form-label">Product Type</label>
+        <select 
+        [(ngModel)]="listFilter"
+        (ngModelChange)="updateFilter($event)"
+        class="form-select"
+        >
+          <option value="0">All</option>
+          <option value="1">Music</option>
+          <option value="2">Tools</option>
+          <option value="3">Clothing</option>
+          <option value="4">Food</option>
+          <option value="5">Household Decorations</option>
+          <option value="6">Toys</option>
+        </select>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label">Filter By:</label>
+        <select class="form-select"
+        [(ngModel)]="listSorter"
+        (ngModelChange)="updateSorter($event)"
+        >
+          <option value="0">Id</option>
+          <option value="1">Reverse Id</option>
+          <option value="2">Alphabetically</option>
+          <option value="3">Reverse Alphabetically</option>
+          <option value="4">Lowest Price</option>
+          <option value="5">Highest Price</option>
+        </select>
+      </div>
+
+      <button 
+        class="btn btn-primary w-100"
+        (click)="$event.preventDefault(); buttonClick()"
+      >
+      Apply</button>

@@ -1,0 +1,165 @@
+<form [formGroup]="checkOutForm">
+    <!-- 1. Contact Info -->
+    <div class="mb-4">
+        <h2 class="h5">Contact Information</h2>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstName" formControlName="checkOutFirstName" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutFirstName')?.invalid && (checkOutForm.get('checkOutFirstName')?.dirty || checkOutForm.get('checkOutFirstName')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutFirstName')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger"
+                        *ngIf="checkOutForm.get('checkOutFirstName')?.hasError('nameValidator')">Invalid
+                        name.</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" formControlName="checkOutLastName" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutLastName')?.invalid && (checkOutForm.get('checkOutLastName')?.dirty || checkOutForm.get('checkOutLastName')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutLastName')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger"
+                        *ngIf="checkOutForm.get('checkOutLastName')?.hasError('nameValidator')">Invalid
+                        name.</small>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="checkOutEmail" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutEmail')?.invalid && (checkOutForm.get('checkOutEmail')?.dirty || checkOutForm.get('checkOutEmail')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutEmail')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutEmail')?.hasError('email')">Invalid
+                        email address.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Shipping Address -->
+    <div class="mb-4">
+        <h2 class="h5">Shipping Address</h2>
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="address1" class="form-label">Address Line 1</label>
+                <input type="text" class="form-control" id="address1" formControlName="checkOutAddress1" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutAddress1')?.invalid && (checkOutForm.get('checkOutAddress1')?.dirty || checkOutForm.get('checkOutAddress1')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutAddress1')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger"
+                        *ngIf="checkOutForm.get('checkOutAddress1')?.hasError('addressValidator')">Invalid
+                        address.</small>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="address2" class="form-label">Address Line 2</label>
+                <input type="text" class="form-control" id="address2" formControlName="checkOutAddress2" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutAddress2')?.invalid && (checkOutForm.get('checkOutAddress2')?.dirty || checkOutForm.get('checkOutAddress2')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutAddress2')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger"
+                        *ngIf="checkOutForm.get('checkOutAddress2')?.hasError('addressValidator')">Invalid
+                        address.</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" formControlName="checkOutCity" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutCity')?.invalid && (checkOutForm.get('checkOutCity')?.dirty || checkOutForm.get('checkOutCity')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutCity')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger"
+                        *ngIf="checkOutForm.get('checkOutCity')?.hasError('cityValidator')">Invalid
+                        city.</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="state" class="form-label">State/Region</label>
+                <input type="text" class="form-control" id="state" formControlName="checkOutState" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutState')?.invalid && (checkOutForm.get('checkOutState')?.dirty || checkOutForm.get('checkOutState')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutState')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger"
+                        *ngIf="checkOutForm.get('checkOutState')?.hasError('stateValidator')">Invalid
+                        state initial.</small>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label for="zip" class="form-label">ZIP</label>
+                <input type="text" class="form-control" id="zip" formControlName="checkOutZIP" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutZIP')?.invalid && (checkOutForm.get('checkOutZIP')?.dirty || checkOutForm.get('checkOutZIP')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutZIP')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutZIP')?.hasError('zipValidator')">Invalid
+                        zip code.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Payment Details -->
+    <div class="mb-4">
+        <h2 class="h5">Payment Method</h2>
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="cardName" class="form-label">Name on Card</label>
+                <input type="text" class="form-control" id="cardName" formControlName="checkOutCardName" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutCardName')?.invalid && (checkOutForm.get('checkOutCardName')?.dirty || checkOutForm.get('checkOutCardName')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutCardName')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger"
+                        *ngIf="checkOutForm.get('checkOutCardName')?.hasError('cardNameValidator')">Invalid
+                        name.</small>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="cardNumber" class="form-label">Card Number</label>
+                <input type="text" class="form-control" id="cardNumber" formControlName="checkOutCardNumber" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutCardNumber')?.invalid && (checkOutForm.get('checkOutCardNumber')?.dirty || checkOutForm.get('checkOutCardNumber')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutCardNumber')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger"
+                        *ngIf="checkOutForm.get('checkOutCardNumber')?.hasError('cardNumberValidator')">Invalid
+                        card number.</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="expDate" class="form-label">Expiration Date</label>
+                <input type="text" class="form-control" id="expDate" placeholder="MM/YY"
+                    formControlName="checkOutExpirationDate" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutExpirationDate')?.invalid && (checkOutForm.get('checkOutExpirationDate')?.dirty || checkOutForm.get('checkOutExpirationDate')?.touched)">
+                    <small class="text-danger"
+                        *ngIf="checkOutForm.get('checkOutExpirationDate')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger"
+                        *ngIf="checkOutForm.get('checkOutExpirationDate')?.hasError('expirationDateValidator')">Invalid
+                        expiration date.</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cvv" formControlName="checkOutCVV" />
+                <div
+                    *ngIf="checkOutForm.get('checkOutCVV')?.invalid && (checkOutForm.get('checkOutCVV')?.dirty || checkOutForm.get('checkOutCVV')?.touched)">
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutCVV')?.hasError('required')">This
+                        field is required.</small>
+                    <small class="text-danger" *ngIf="checkOutForm.get('checkOutCVV')?.hasError('cvvValidator')">Invalid
+                        cvv.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
