@@ -7,10 +7,10 @@ const invalidEmailDomain = createInvalidDomainValidator(['gmail.com', 'yahoo.com
 
 @Component({
   selector: 'app-contact',
-  imports: [ ReactiveFormsModule,
+  imports: [ReactiveFormsModule,
     CommonModule
 
-   ],
+  ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
@@ -18,16 +18,16 @@ export class ContactComponent {
   @Input() name!: string;
 
   contactForm = new FormGroup({
-    senderName:  new FormControl('', Validators.required),
+    senderName: new FormControl('', Validators.required),
     senderEmail: new FormControl('', [Validators.required, Validators.email, invalidEmailDomain]),
-    senderMessage:  new FormControl('', [Validators.required, Validators.minLength(10)])
+    senderMessage: new FormControl('', [Validators.required, Validators.minLength(10)])
   });
 
-  
+
 
   submitForm() {
-    // clear eveyrthing
-    // then give a messge saying successfully sent
+    alert("Thank you for your feedback!")
+    this.contactForm.reset();
   }
 
 }
