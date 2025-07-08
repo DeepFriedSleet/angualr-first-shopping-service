@@ -56,18 +56,16 @@ export class ProductFilterComponent {
 
   emitSorter(sorter: any) {
     this.sorterChange.emit(sorter);
+    this.emitSorter(this.sorter);
   }
 
   updateFilter(index: number) {
     this.filter = filters[index];
+    this.emitFilter(this.filter);
   }
 
   updateSorter(index: number) {
     this.sorter = sortFunctions[index];
-  }
-
-  buttonClick() {
-    this.emitFilter(this.filter);
     this.emitSorter(this.sorter);
   }
 
