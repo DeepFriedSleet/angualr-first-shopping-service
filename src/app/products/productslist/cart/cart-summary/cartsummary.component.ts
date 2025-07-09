@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CartSummaryComponent implements OnInit {
   cartItems: CartItem[] = [];
+  sum: number = 0;
 
   constructor(public cart: CartService, private router: Router) { }
 
@@ -28,6 +29,15 @@ export class CartSummaryComponent implements OnInit {
 
   goTo(route: string) {
     this.router.navigate([route]);
+  }
+
+  getSubtotal() {
+    this.calculateSum();
+    return this.sum;
+  }
+
+  private calculateSum() {
+    this.sum = this.cartItems.reduce((total, index) => total + index.product.price * index.quantity, 0);
   }
 
 }
