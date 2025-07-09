@@ -1,25 +1,26 @@
-<div class="container">
-  <!--Search Bar-->
-  <div class="input-group mb-4">
-    <input type="search" class="form-control" placeholder="Search products…" [(ngModel)]="search" />
+<div class="site-toolbar row g-3 align-items-start">
+  <div class="col-4">
+    <app-product-filter [(filter)]="filter" [(sorter)]="sorter" [search]="search">
+    </app-product-filter>
   </div>
 
+  <div class="form-group flex-fill mb-0 col-8">
+    <label class="form-label">Search</label>
+    <input type="search" class="form-control" placeholder="Search products…" [(ngModel)]="search" />
+  </div>
+</div>
+
+<div class="container-fluid">
   <div class="row">
-
-    <!-- ❶  FILTER SIDEBAR  -->
-    <aside class="col-12 col-md-3 mb-4 sidebar-sticky min-vh-100 filter-column">
-      <app-product-filter [(filter)]="filter" [(sorter)]="sorter" [search]="search"></app-product-filter>
-    </aside>
-
     <!-- ❷  PRODUCT LIST  -->
-    <section class="col-12 col-md-6">
+    <section class="col-12 col-md-8" style="padding-left: 100px;">
       <app-productslist [products]="products
         .filter(filter)
         .sort(sorter)
         .filter(searchFn(search))"></app-productslist>
     </section>
 
-    <aside class="col-12 col-md-3 mb-4 pt-4">
+    <aside class="col-12 col-md-4 mb-4 pt-4" style="padding-right: 100px;">
       <app-cartsummary></app-cartsummary>
     </aside>
   </div>
